@@ -1,46 +1,43 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { Rating } from 'react-native-elements';
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 
-export default function Place({ navigation }) {
+
+
+export default function Place() {
     
     return (
         
-            <TouchableOpacity onPress={() => {
-                navigation.navigate('PlacePage')}} >
-                <View style={ styles.placeContainer }>
-                    <View style={ styles.placeContainerImage }>
-                        <Image
-                            style={styles.principaleImage}
-                            source={require('../assets/plage.jpeg')}
-                            />
-                    </View>
-                    <View style={ styles.textContainer }>
-                        <View style={ styles.headerContainer }>
-                            <Text style={ styles.titre }>Nom du Lieu</Text>
-                            <Image
-                                style={styles.image}
-                                source={require('../assets/star.png')}
-                                />
-                        </View>
-                        <Text>Description : </Text>
-                        <Text>Adresse : </Text>
-                        <Rating style={styles.rating}
-                            type='custom'
-                            startingValue={3.3}
-                            imageSize={20}
-                            tintColor='#ffe6ff'
-                            ratingColor='orange'
-                            />
-                        {/* <Rating startingValue= {4}
-                            
-                            ratingColor='orange'
-                        style={styles.rating}/> */}
-                    </View>
+            <View style={ styles.placeContainer }>
+                <View style={ styles.placeContainerImage }>
+                    <Image
+                        style={styles.principaleImage}
+                        source={require('../assets/plage.jpeg')}
+                    />
                 </View>
-            </TouchableOpacity>
+                <View style={ styles.textContainer }>
+                    <View style={ styles.headerContainer }>
+                        <Text style={ styles.titre }>Nom du Lieu</Text>
+                        <Image
+                            style={styles.image}
+                            source={require('../assets/star.png')}
+                        />
+                    </View>
+                    <Text>Description : </Text>
+                    <Text>Adresse : </Text>
+                    <Rating style={styles.rating}
+                        type='custom'
+                        startingValue={3.3}
+                        imageSize={20}
+                        tintColor='#ffe6ff'
+                        ratingColor='orange'
+                        />
+                    {/* <Rating startingValue= {4}
+                        
+                        ratingColor='orange'
+                        style={styles.rating}/> */}
+                </View>
+            </View>
     );
     
 }
